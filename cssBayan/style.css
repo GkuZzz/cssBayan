@@ -1,0 +1,173 @@
+body {
+    background-color: aquamarine;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main__title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 50px;
+}
+
+.title {
+    margin-top: 50px;
+}
+
+/* mem */
+
+.mem__box {
+    border: 1px solid pink;
+    margin-top: 30px;
+}
+
+.mem__img {
+    margin: 30px 0;
+    display: none;
+
+}
+
+.mem__title {
+    display: block;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 15px 20px;
+    transition: background .5s ease;
+    min-width: 600px;
+    position: relative;
+}
+
+.mem__title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 17.3px 10px 0 10px;
+    border-color: #e7308e transparent transparent transparent;
+}
+
+
+.mem__title:hover {
+    background-color: pink;
+    color: white;
+}
+
+.mem__title:hover ~ .mem__img {
+    display: flex;
+    justify-content: center;
+    transition: 2s ease;
+}
+
+
+.mem__input {
+    appearance: none;
+    position: absolute;
+}
+
+.mem__input:checked ~ .mem__img {
+    display: flex;
+    justify-content: center;
+}
+
+.mem__input:checked ~ .mem__title {
+    background-color: pink;
+}
+
+.mem__input:checked ~ .mem__title::after {
+    border-style: solid;
+    border-width: 0 10px 17.3px 10px;
+    border-color: transparent transparent #e7308e transparent;
+}
+
+.mem__title:hover::after {
+    border-style: solid;
+    border-width: 0 10px 17.3px 10px;
+    border-color: transparent transparent #e7308e transparent;
+
+}
+
+p {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+footer {
+    margin-top: 40px;
+}
+
+
+
+/* media */
+
+@media (max-width: 820px) {
+    .title {
+        margin-top: 50px;
+        font-size: 18px;
+    }
+
+    .main__title {
+        font-size: 18px;
+    }
+    .mem__title {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .mem__title {
+        min-width: 300px;
+    }
+
+    .mem__img {
+        overflow: hidden;
+    }
+
+    .mem__img img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .title {
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    .main__title {
+        font-size: 15px;
+    }
+    .mem__title {
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+}
