@@ -25,6 +25,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .main__title {
     text-align: center;
+    text-transform: uppercase;
+    margin-top: 50px;
     
 }
 
@@ -32,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .mem__box {
     border: 1px solid pink;
+    margin-top: 30px;
 }
 
 .mem__img {
@@ -48,12 +51,33 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px 20px;
     transition: background .5s ease;
     min-width: 600px;
+    position: relative;
 }
+
+.mem__title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 17.3px 10px 0 10px;
+    border-color: #e7308e transparent transparent transparent;
+}
+
 
 .mem__title:hover {
     background-color: pink;
     color: white;
 }
+
+.mem__title:hover ~ .mem__img {
+    display: flex;
+    justify-content: center;
+    transition: 2s ease;
+}
+
 
 .mem__input {
     appearance: none;
@@ -67,4 +91,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .mem__input:checked ~ .mem__title {
     background-color: pink;
+}
+
+.mem__input:checked ~ .mem__title::after {
+    border-style: solid;
+    border-width: 0 10px 17.3px 10px;
+    border-color: transparent transparent #e7308e transparent;
+}
+
+.mem__title:hover::after {
+    border-style: solid;
+    border-width: 0 10px 17.3px 10px;
+    border-color: transparent transparent #e7308e transparent;
+
+}
+
+p {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+footer {
+    margin-top: 40px;
 }
