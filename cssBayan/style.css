@@ -1,6 +1,10 @@
 body {
     background-color: aquamarine;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 *,
@@ -12,4 +16,55 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main__title {
+    text-align: center;
+    
+}
+
+/* mem */
+
+.mem__box {
+    border: 1px solid pink;
+}
+
+.mem__img {
+    margin: 30px 0;
+    display: none;
+
+}
+
+.mem__title {
+    display: block;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 15px 20px;
+    transition: background .5s ease;
+    min-width: 600px;
+}
+
+.mem__title:hover {
+    background-color: pink;
+    color: white;
+}
+
+.mem__input {
+    appearance: none;
+    position: absolute;
+}
+
+.mem__input:checked ~ .mem__img {
+    display: flex;
+    justify-content: center;
+}
+
+.mem__input:checked ~ .mem__title {
+    background-color: pink;
 }
